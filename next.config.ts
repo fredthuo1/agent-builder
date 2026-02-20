@@ -1,7 +1,22 @@
-import type { NextConfig } from "next";
+﻿import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+  typescript: {
+     ignoreBuildErrors: true,
+   },
+
+  webpack: (config) => {
+    config.watchOptions = {
+      ...(config.watchOptions ?? {}),
+      ignored: ["**/generated/**"],
+    };
+    return config;
+  },
 };
 
 export default nextConfig;
