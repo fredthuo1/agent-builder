@@ -1,0 +1,30 @@
+{
+  "id": "4WAWl9Cm",
+  "prompt": "Build a habit tracker with fields: habitName, frequency (daily, weekly), streak (number), lastCompletedDate (date), active (boolean).",
+  "createdAt": 1771564969921,
+  "status": "failed",
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\4WAWl9Cm\\project",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "idle",
+      "log": []
+    },
+    "backend": {
+      "name": "backend",
+      "status": "idle",
+      "log": []
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "idle",
+      "log": []
+    },
+    "qa": {
+      "name": "qa",
+      "status": "failed",
+      "log": []
+    }
+  },
+  "error": "(0 , _builds__WEBPACK_IMPORTED_MODULE_2__.ensureGeneratedRoot) is not a function"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "1-DtmWUy",
+  "prompt": "Build a habit tracker with fields: habitName, frequency (daily, weekly), streak (number), lastCompletedDate (date), active (boolean).",
+  "createdAt": 1771604089935,
+  "status": "done",
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\1-DtmWUy\\project",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "done",
+      "log": [
+        "Planning app for: \"Build a habit tracker with fields: habitName, frequency (daily, weekly), streak (number), lastCompletedDate (date), active (boolean).\"",
+        "Mode requested: auto",
+        "Planner: Gemini module not present (planner.gemini.ts missing) — skipping",
+        "Planner: trying OpenAI backup…",
+        "Planner result: generationMode=ai provider=openai"
+      ],
+      "output": {
+        "plan": {
+          "appName": "Habit Tracker",
+          "entities": [
+            {
+              "name": "habits",
+              "title": "Habits",
+              "fields": [
+                {
+                  "name": "habit_name",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "frequency",
+                  "type": "enum",
+                  "required": true,
+                  "enumValues": [
+                    "daily",
+                    "weekly"
+                  ]
+                },
+                {
+                  "name": "streak",
+                  "type": "number",
+                  "required": true
+                },
+                {
+                  "name": "last_completed_date",
+                  "type": "date"
+                },
+                {
+                  "name": "active",
+                  "type": "boolean",
+                  "required": true
+                }
+              ]
+            }
+          ],
+          "generationMode": "ai",
+          "aiProvider": "openai"
+        },
+        "generationMode": "ai",
+        "aiProvider": "openai"
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "status": "done",
+      "log": [
+        "Generating Express + SQLite backend...",
+        "Backend files written ✅"
+      ]
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "done",
+      "log": [
+        "Generating Next.js frontend...",
+        "Frontend files written ✅"
+      ]
+    },
+    "qa": {
+      "name": "qa",
+      "status": "done",
+      "log": [
+        "Writing root package + README + spec.json...",
+        "Root files written ✅",
+        "Build done ✅"
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "IP_PnEMUL_",
+  "prompt": "Build a mini CRM for contacts with fields: name, email, phone, company, stage (lead, qualified, customer), notes.",
+  "createdAt": 1771480870262,
+  "status": "done",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "done",
+      "log": [
+        "Planning app for: \"Build a mini CRM for contacts with fields: name, email, phone, company, stage (lead, qualified, customer), notes.\"",
+        "🔮 Gemini API key detected.",
+        "🔮 Calling Gemini for structured spec...",
+        "⚠️ Gemini failed: Gemini HTTP 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\n    \"stat",
+        "⚠️ Falling back to deterministic local plan.",
+        "Generation mode: FALLBACK",
+        "App name: build-a-mini-crm-for-contacts-wi"
+      ],
+      "startedAt": 1771480870280,
+      "finishedAt": 1771480872285,
+      "output": {
+        "plan": {
+          "appName": "build-a-mini-crm-for-contacts-wi",
+          "displayName": "Build A Mini Crm For Contacts Wi",
+          "description": "Full-stack app generated from: \"Build a mini CRM for contacts with fields: name, email, phone, company, stage (lead, qualified, customer), notes.\"",
+          "ports": {
+            "backend": 5050,
+            "frontend": 3001
+          },
+          "entity": {
+            "namePlural": "tasks",
+            "nameSingular": "task",
+            "fields": [
+              {
+                "name": "title",
+                "type": "text",
+                "required": true
+              },
+              {
+                "name": "status",
+                "type": "select",
+                "options": [
+                  "todo",
+                  "doing",
+                  "done"
+                ],
+                "required": true
+              },
+              {
+                "name": "priority",
+                "type": "number"
+              }
+            ]
+          }
+        },
+        "generationMode": "fallback"
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "status": "done",
+      "log": [
+        "Generating backend files...",
+        "Backend files written ✅"
+      ],
+      "startedAt": 1771480872300,
+      "finishedAt": 1771480872335
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "done",
+      "log": [
+        "Generating frontend files...",
+        "Frontend files written ✅"
+      ],
+      "startedAt": 1771480872351,
+      "finishedAt": 1771480872402
+    },
+    "qa": {
+      "name": "qa",
+      "status": "done",
+      "log": [
+        "Writing root package.json + README...",
+        "Root package.json written ✅",
+        "README written ✅",
+        "Build complete 🎉"
+      ],
+      "startedAt": 1771480872411,
+      "finishedAt": 1771480872462
+    }
+  },
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\IP_PnEMUL_"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "_PhW9_zgxo",
+  "prompt": "Build a habit tracker for daily workouts",
+  "createdAt": 1771478852852,
+  "status": "done",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "done",
+      "log": [
+        "Planning app for: \"Build a habit tracker for daily workouts\"",
+        "🔮 Gemini API key detected.",
+        "🔮 Calling Gemini for structured spec...",
+        "✅ AI generation successful. Entity: workouts, Fields: 6",
+        "Generation mode: AI",
+        "App name: habit-tracker"
+      ],
+      "startedAt": 1771478852877,
+      "finishedAt": 1771478862389,
+      "output": {
+        "plan": {
+          "appName": "habit-tracker",
+          "displayName": "Daily Workout Tracker",
+          "description": "A simple application to track and manage daily workout habits and progress.",
+          "ports": {
+            "backend": 5050,
+            "frontend": 3001
+          },
+          "entity": {
+            "namePlural": "workouts",
+            "nameSingular": "workout",
+            "fields": [
+              {
+                "name": "title",
+                "type": "text",
+                "required": true
+              },
+              {
+                "name": "type",
+                "type": "select",
+                "options": [
+                  "Strength",
+                  "Cardio",
+                  "Flexibility",
+                  "HIIT",
+                  "Other"
+                ],
+                "required": true
+              },
+              {
+                "name": "duration_minutes",
+                "type": "number",
+                "required": true
+              },
+              {
+                "name": "intensity",
+                "type": "select",
+                "options": [
+                  "Low",
+                  "Medium",
+                  "High"
+                ],
+                "required": true
+              },
+              {
+                "name": "workout_date",
+                "type": "date",
+                "required": true
+              },
+              {
+                "name": "is_completed",
+                "type": "boolean",
+                "required": true
+              }
+            ]
+          }
+        },
+        "generationMode": "ai"
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "status": "done",
+      "log": [
+        "Generating backend files...",
+        "Backend files written ✅"
+      ],
+      "startedAt": 1771478862408,
+      "finishedAt": 1771478862455
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "done",
+      "log": [
+        "Generating frontend files...",
+        "Frontend files written ✅"
+      ],
+      "startedAt": 1771478862465,
+      "finishedAt": 1771478862496
+    },
+    "qa": {
+      "name": "qa",
+      "status": "done",
+      "log": [
+        "Writing root package.json + README...",
+        "Root package.json written ✅",
+        "README written ✅",
+        "Build complete 🎉"
+      ],
+      "startedAt": 1771478862505,
+      "finishedAt": 1771478862563
+    }
+  },
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\_PhW9_zgxo"
+}

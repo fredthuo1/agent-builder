@@ -1,0 +1,93 @@
+{
+  "id": "oqT-nGVQL4",
+  "prompt": "Build a habit tracker with fields: habitName, frequency (daily, weekly), streak (number), lastCompletedDate (date), active (boolean).",
+  "createdAt": 1771556547442,
+  "status": "done",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "done",
+      "log": [
+        "Planning app for: \"Build a habit tracker with fields: habitName, frequency (daily, weekly), streak (number), lastCompletedDate (date), active (boolean).\"",
+        "🔮 Gemini API key detected.",
+        "🔮 Calling Gemini for structured spec...",
+        "⚠️ Gemini failed: Gemini HTTP 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\n    \"stat",
+        "⚠️ Falling back to deterministic local plan.",
+        "Generation mode: FALLBACK",
+        "App name: build-a-habit-tracker-with-field"
+      ],
+      "startedAt": 1771556547457,
+      "finishedAt": 1771556549522,
+      "output": {
+        "plan": {
+          "appName": "build-a-habit-tracker-with-field",
+          "displayName": "Build A Habit Tracker With Field",
+          "description": "Full-stack app generated from: \"Build a habit tracker with fields: habitName, frequency (daily, weekly), streak (number), lastCompletedDate (date), active (boolean).\"",
+          "ports": {
+            "backend": 5050,
+            "frontend": 3001
+          },
+          "entity": {
+            "namePlural": "tasks",
+            "nameSingular": "task",
+            "fields": [
+              {
+                "name": "title",
+                "type": "text",
+                "required": true
+              },
+              {
+                "name": "status",
+                "type": "select",
+                "options": [
+                  "todo",
+                  "doing",
+                  "done"
+                ],
+                "required": true
+              },
+              {
+                "name": "priority",
+                "type": "number"
+              }
+            ]
+          }
+        },
+        "generationMode": "fallback"
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "status": "done",
+      "log": [
+        "Generating backend files...",
+        "Backend files written ✅"
+      ],
+      "startedAt": 1771556549533,
+      "finishedAt": 1771556549570
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "done",
+      "log": [
+        "Generating frontend files...",
+        "Frontend files written ✅"
+      ],
+      "startedAt": 1771556549587,
+      "finishedAt": 1771556549630
+    },
+    "qa": {
+      "name": "qa",
+      "status": "done",
+      "log": [
+        "Writing root package.json + README...",
+        "Root package.json written ✅",
+        "README written ✅",
+        "Build complete 🎉"
+      ],
+      "startedAt": 1771556549639,
+      "finishedAt": 1771556549701
+    }
+  },
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\oqT-nGVQL4"
+}

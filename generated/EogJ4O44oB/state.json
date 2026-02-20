@@ -1,0 +1,113 @@
+{
+  "id": "EogJ4O44oB",
+  "prompt": "Build a task app with auth and sqlite",
+  "createdAt": 1771478496360,
+  "status": "done",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "done",
+      "log": [
+        "Planning app for: \"Build a task app with auth and sqlite\"",
+        "🔮 Gemini API key detected.",
+        "🔮 Calling Gemini for structured spec...",
+        "✅ AI generation successful. Entity: tasks, Fields: 6",
+        "Generation mode: AI",
+        "App name: task-manager"
+      ],
+      "startedAt": 1771478496379,
+      "finishedAt": 1771478527125,
+      "output": {
+        "plan": {
+          "appName": "task-manager",
+          "displayName": "Task Manager",
+          "description": "A simple task management application to track daily activities and progress.",
+          "ports": {
+            "backend": 5050,
+            "frontend": 3001
+          },
+          "entity": {
+            "namePlural": "tasks",
+            "nameSingular": "task",
+            "fields": [
+              {
+                "name": "title",
+                "type": "text",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "text",
+                "required": false
+              },
+              {
+                "name": "priority",
+                "type": "select",
+                "options": [
+                  "Low",
+                  "Medium",
+                  "High"
+                ],
+                "required": true
+              },
+              {
+                "name": "status",
+                "type": "select",
+                "options": [
+                  "Todo",
+                  "In Progress",
+                  "Done"
+                ],
+                "required": true
+              },
+              {
+                "name": "due_date",
+                "type": "date",
+                "required": false
+              },
+              {
+                "name": "is_completed",
+                "type": "boolean",
+                "required": true
+              }
+            ]
+          }
+        },
+        "generationMode": "ai"
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "status": "done",
+      "log": [
+        "Generating backend files...",
+        "Backend files written ✅"
+      ],
+      "startedAt": 1771478527149,
+      "finishedAt": 1771478527197
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "done",
+      "log": [
+        "Generating frontend files...",
+        "Frontend files written ✅"
+      ],
+      "startedAt": 1771478527206,
+      "finishedAt": 1771478527246
+    },
+    "qa": {
+      "name": "qa",
+      "status": "done",
+      "log": [
+        "Writing root package.json + README...",
+        "Root package.json written ✅",
+        "README written ✅",
+        "Build complete 🎉"
+      ],
+      "startedAt": 1771478527256,
+      "finishedAt": 1771478527327
+    }
+  },
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\EogJ4O44oB"
+}

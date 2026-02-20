@@ -1,0 +1,60 @@
+{
+  "id": "gN5a8eE4yF",
+  "prompt": "Build a task app with auth and sqlite",
+  "createdAt": 1771474370014,
+  "status": "done",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "done",
+      "log": [
+        "Planning app for: \"Build a task app with auth and sqlite\"",
+        "App name: build-a-task-app-with-auth-and-s"
+      ],
+      "startedAt": 1771474370033,
+      "finishedAt": 1771474370145,
+      "output": {
+        "appName": "build-a-task-app-with-auth-and-s",
+        "displayName": "Build A Task App With Auth And S",
+        "description": "Full-stack app generated from: \"Build a task app with auth and sqlite\"",
+        "ports": {
+          "backend": 5050,
+          "frontend": 3001
+        }
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "status": "done",
+      "log": [
+        "Generating backend...",
+        "Backend files written ✅"
+      ],
+      "startedAt": 1771474370174,
+      "finishedAt": 1771474370277
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "done",
+      "log": [
+        "Generating frontend...",
+        "Frontend files written ✅"
+      ],
+      "startedAt": 1771474370290,
+      "finishedAt": 1771474370329
+    },
+    "qa": {
+      "name": "qa",
+      "status": "done",
+      "log": [
+        "Writing root package.json + README...",
+        "Root package.json written ✅",
+        "README written ✅",
+        "All steps finished — marking build done."
+      ],
+      "startedAt": 1771474370343,
+      "finishedAt": 1771474370397
+    }
+  },
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\gN5a8eE4yF"
+}

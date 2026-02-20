@@ -1,0 +1,110 @@
+{
+  "id": "vWDFHA-eBc",
+  "prompt": "Build a task app with auth and sqlite",
+  "createdAt": 1771478216900,
+  "status": "done",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "done",
+      "log": [
+        "Planning app for: \"Build a task app with auth and sqlite\"",
+        "Gemini enabled — generating structured spec...",
+        "Gemini spec ok: entity=tasks, fields=6",
+        "App name: task-manager"
+      ],
+      "startedAt": 1771478216924,
+      "finishedAt": 1771478226785,
+      "output": {
+        "appName": "task-manager",
+        "displayName": "Task Manager",
+        "description": "A streamlined task tracking application for managing daily activities and project milestones.",
+        "ports": {
+          "backend": 5050,
+          "frontend": 3001
+        },
+        "entity": {
+          "namePlural": "tasks",
+          "nameSingular": "task",
+          "fields": [
+            {
+              "name": "title",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "text",
+              "required": false
+            },
+            {
+              "name": "status",
+              "type": "select",
+              "options": [
+                "Todo",
+                "In Progress",
+                "Review",
+                "Done"
+              ],
+              "required": true
+            },
+            {
+              "name": "priority",
+              "type": "select",
+              "options": [
+                "Low",
+                "Medium",
+                "High",
+                "Urgent"
+              ],
+              "required": true
+            },
+            {
+              "name": "due_date",
+              "type": "date",
+              "required": false
+            },
+            {
+              "name": "is_archived",
+              "type": "boolean",
+              "required": true
+            }
+          ]
+        }
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "status": "done",
+      "log": [
+        "Generating backend...",
+        "Backend files written ✅"
+      ],
+      "startedAt": 1771478226799,
+      "finishedAt": 1771478226838
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "done",
+      "log": [
+        "Generating frontend...",
+        "Frontend files written ✅"
+      ],
+      "startedAt": 1771478226847,
+      "finishedAt": 1771478226883
+    },
+    "qa": {
+      "name": "qa",
+      "status": "done",
+      "log": [
+        "Writing root package.json + README...",
+        "Root package.json written ✅",
+        "README written ✅",
+        "All steps finished — marking build done."
+      ],
+      "startedAt": 1771478226891,
+      "finishedAt": 1771478226947
+    }
+  },
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\vWDFHA-eBc"
+}

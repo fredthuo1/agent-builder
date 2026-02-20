@@ -1,0 +1,144 @@
+{
+  "appName": "DogMarket",
+  "entities": [
+    {
+      "name": "dogs",
+      "title": "Dogs",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "breed",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "sex",
+          "type": "enum",
+          "required": true,
+          "enumValues": [
+            "male",
+            "female"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "required": true,
+          "enumValues": [
+            "small",
+            "medium",
+            "large"
+          ]
+        },
+        {
+          "name": "age_months",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "price",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "available",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "listed_date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "text"
+        },
+        {
+          "name": "vaccination_status",
+          "type": "enum",
+          "enumValues": [
+            "none",
+            "partial",
+            "up_to_date"
+          ]
+        },
+        {
+          "name": "pedigree",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "title": "Orders",
+      "fields": [
+        {
+          "name": "dog_id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "buyer_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "buyer_email",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "buyer_phone",
+          "type": "string"
+        },
+        {
+          "name": "shipping_address",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "order_status",
+          "type": "enum",
+          "required": true,
+          "enumValues": [
+            "pending",
+            "paid",
+            "shipped",
+            "delivered",
+            "cancelled"
+          ]
+        },
+        {
+          "name": "order_total",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "order_date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "notes",
+          "type": "text"
+        },
+        {
+          "name": "payment_method",
+          "type": "enum",
+          "enumValues": [
+            "card",
+            "bank_transfer",
+            "cash"
+          ]
+        }
+      ]
+    }
+  ],
+  "generationMode": "ai",
+  "aiProvider": "openai"
+}

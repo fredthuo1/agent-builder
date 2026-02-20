@@ -1,0 +1,17 @@
+{
+  "name": "dogmarket",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n BACKEND,FRONTEND \"npm -w backend run dev\" \"npm -w frontend run dev\"",
+    "dev:backend": "npm -w backend run dev",
+    "dev:frontend": "npm -w frontend run dev",
+    "setup": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "appName": "Habit Tracker",
+  "entities": [
+    {
+      "name": "habits",
+      "title": "Habits",
+      "fields": [
+        {
+          "name": "habit_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "frequency",
+          "type": "enum",
+          "required": true,
+          "enumValues": [
+            "daily",
+            "weekly"
+          ]
+        },
+        {
+          "name": "streak",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "last_completed_date",
+          "type": "date"
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "generationMode": "ai",
+  "aiProvider": "openai"
+}

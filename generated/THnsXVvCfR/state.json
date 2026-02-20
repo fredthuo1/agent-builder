@@ -1,0 +1,92 @@
+{
+  "id": "THnsXVvCfR",
+  "prompt": "Build a task app with auth and sqlite",
+  "createdAt": 1771472742971,
+  "status": "done",
+  "agents": {
+    "planner": {
+      "name": "planner",
+      "status": "done",
+      "log": [
+        "Planning app for: \"Build a task app with auth and sqlite\"",
+        "App name: build-a-task-app-with-au",
+        "Endpoints: 4"
+      ],
+      "startedAt": 1771472742988,
+      "finishedAt": 1771472743056,
+      "output": {
+        "appName": "build-a-task-app-with-au",
+        "features": [
+          "Auth (demo token)",
+          "Tasks CRUD",
+          "SQLite storage",
+          "Responsive UI"
+        ],
+        "endpoints": [
+          {
+            "method": "POST",
+            "path": "/api/login",
+            "description": "Get demo token"
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks",
+            "description": "List tasks"
+          },
+          {
+            "method": "POST",
+            "path": "/api/tasks",
+            "description": "Create task"
+          },
+          {
+            "method": "DELETE",
+            "path": "/api/tasks/:id",
+            "description": "Delete task"
+          }
+        ],
+        "tables": [
+          {
+            "name": "tasks",
+            "columns": [
+              "id INTEGER PRIMARY KEY",
+              "title TEXT",
+              "done INTEGER"
+            ]
+          }
+        ]
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "status": "done",
+      "log": [
+        "Generating Express + SQLite backend...",
+        "Backend files written ✅"
+      ],
+      "startedAt": 1771472743093,
+      "finishedAt": 1771472743270
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "done",
+      "log": [
+        "Generating Next.js frontend...",
+        "Frontend files written ✅"
+      ],
+      "startedAt": 1771472743283,
+      "finishedAt": 1771472743326
+    },
+    "qa": {
+      "name": "qa",
+      "status": "done",
+      "log": [
+        "Writing README...",
+        "README written ✅",
+        "All steps finished — marking build done."
+      ],
+      "startedAt": 1771472743337,
+      "finishedAt": 1771472743385
+    }
+  },
+  "outDir": "C:\\Users\\User\\Documents\\agent-builder\\generated\\THnsXVvCfR"
+}

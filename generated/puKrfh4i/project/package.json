@@ -1,0 +1,17 @@
+{
+  "name": "build-a-habit-tracker-with-fields-habitname-fr",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n BACKEND,FRONTEND \"npm -w backend run dev\" \"npm -w frontend run dev\"",
+    "dev:backend": "npm -w backend run dev",
+    "dev:frontend": "npm -w frontend run dev",
+    "install": "npm install"
+  },
+  "dependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
