@@ -1,8 +1,8 @@
 ﻿import type { AppPlan, GenerationMode } from "./types";
-import { makePlan } from "./templates";
+import { makePlan } from "./planner"; // ✅ FIX: use planner.ts (not templates)
 import { makePlanWithOpenAI } from "./planner.openai";
-
-type Provider = "gemini" | "openai" | "local" | "fallback";
+import path from "path";
+import fs from "fs";
 
 function canUseOpenAI() {
   return !!process.env.OPENAI_API_KEY;
@@ -13,10 +13,16 @@ function canUseGemini() {
 
 function withMeta(plan: AppPlan, generationMode: "ai" | "local" | "fallback", aiProvider?: "gemini" | "openai") {
   return {
-    ...(plan as any),
+    ...(plan as unknown as Record<string, unknown>),
     generationMode,
     aiProvider,
-  } as any as AppPlan;
+  } as AppPlan;
+}
+
+function geminiModuleExists() {
+  // Build-safe check: only attempt dynamic import if file exists
+  const base = path.join(process.cwd(), "src", "lib");
+  return fs.existsSync(path.join(base, "planner.gemini.ts")) || fs.existsSync(path.join(base, "planner.gemini.js"));
 }
 
 async function tryGemini(prompt: string, modeRequested: GenerationMode, log?: (m: string) => void) {
@@ -24,22 +30,21 @@ async function tryGemini(prompt: string, modeRequested: GenerationMode, log?: (m
     log?.("Planner: Gemini not configured (missing GEMINI_API_KEY)");
     return null;
   }
+  if (!geminiModuleExists()) {
+    log?.("Planner: Gemini module not present (planner.gemini.ts missing) — skipping");
+    return null;
+  }
 
   try {
     log?.("Planner: trying Gemini…");
-
-    // Dynamic import so missing file doesn't crash build.
-    // Supports either planner.gemini.ts or planner.gemini.js if you add it later.
-    const mod = await import("./planner.gemini").catch(() => null as any);
-    if (!mod?.makePlanWithGemini) {
-      log?.("Planner: Gemini module missing (src/lib/planner.gemini.ts not found) — skipping");
-      return null;
-    }
-
-    const plan = (await mod.makePlanWithGemini(prompt, modeRequested)) as AppPlan;
+    const mod = (await import("./planner.gemini")) as unknown as {
+      makePlanWithGemini: (p: string, m: GenerationMode) => Promise<AppPlan>;
+    };
+    const plan = await mod.makePlanWithGemini(prompt, modeRequested);
     return withMeta(plan, "ai", "gemini");
-  } catch (e: any) {
-    log?.(`Planner: Gemini failed → ${e?.message || e}`);
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : String(e);
+    log?.(`Planner: Gemini failed → ${msg}`);
     return null;
   }
 }
@@ -54,26 +59,20 @@ async function tryOpenAI(prompt: string, modeRequested: GenerationMode, log?: (m
     log?.("Planner: trying OpenAI backup…");
     const plan = await makePlanWithOpenAI(prompt, modeRequested);
     return withMeta(plan, "ai", "openai");
-  } catch (e: any) {
-    log?.(`Planner: OpenAI failed → ${e?.message || e}`);
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : String(e);
+    log?.(`Planner: OpenAI failed → ${msg}`);
     return null;
   }
 }
 
-/**
- * Orchestrator:
- * - mode=local => local
- * - else: try Gemini if available AND module exists
- * - else: try OpenAI if available
- * - else: local fallback
- */
 export async function makePlanWithAI(
   prompt: string,
   modeRequested: GenerationMode,
   log?: (m: string) => void
 ): Promise<AppPlan> {
   if (modeRequested === "local") {
-    log?.("Planner: mode=local → using local templates");
+    log?.("Planner: mode=local → using local planner");
     return withMeta(makePlan(prompt), "local");
   }
 
@@ -83,6 +82,6 @@ export async function makePlanWithAI(
   const oa = await tryOpenAI(prompt, modeRequested, log);
   if (oa) return oa;
 
-  log?.("Planner: all AI paths unavailable/failed → falling back to local templates");
+  log?.("Planner: all AI paths unavailable/failed → fallback to local planner");
   return withMeta(makePlan(prompt), "fallback");
 }

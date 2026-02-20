@@ -91,8 +91,10 @@ export async function makePlanWithOpenAI(prompt: string, _modeRequested: Generat
     input: prompt,
   });
 
-  const text = stripCodeFences((res as any)?.output_text || "");
-  const plan = safeJsonParse<AppPlan>(text);
+ type ResponseWithText = { output_text?: string };
+
+ const text = stripCodeFences((res as unknown as ResponseWithText).output_text || "");
+ const plan = safeJsonParse<AppPlan>(text);
 
   if (!plan || !validatePlanShape(plan)) {
     throw new Error("OpenAI returned invalid plan JSON");
