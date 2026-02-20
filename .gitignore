@@ -16,6 +16,7 @@
 # next.js
 /.next/
 /out/
+generated/
 
 # production
 /build
@@ -39,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Visual Studio / VS Code / Windows
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
